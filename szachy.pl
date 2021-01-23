@@ -20,6 +20,8 @@
   figura(wieza,czarne,c,5).
   figura(hetman,czarne,f,1).
   figura(krol,czarne,e,6).
+  
+  
 %Funkcje sprawdzajace mozliwe ruchy dla danego koloru gracza
 wszystkie_pos_bialych(C ,X1, Y1, X2, Y2) :- ruchy(C, biale, X1, Y1, X2, Y2).
 %Funkcja ruchy zwraca dla kazdej figury danego koloru:
