@@ -49,7 +49,7 @@ ruchy(C, K, X1, Y1, X2, Y2) :-  mozliwePozycje(X1, Y1), figura(C, K, X1, Y1), ko
 % ktore nie sa krolem
 ruchyBezKrola(C, K, X1, Y1, X2, Y2) :-  mozliwePozycje(X1, Y1), figura(C, K, X1, Y1), C \== krol, kombLitNum(X2, Y2), pos(X1, Y1, X2, Y2).
 
-%Funkcje zwracaja prawde gdy bliskokrola istnieje inny krol.
+%Funkcje zwracaja prawde gdy blisko krola istnieje inny krol.
 
 %Funkcja sprawdzajaca czy inny krol jest blisko po skosie:
 czyKrolBlisko(K,X,Y) :- figura(krol,K1,X2,Y2), litery(L), K1 \== K,
@@ -129,7 +129,7 @@ ruch(C, K, X1, Y1, X2, Y2) :- C == skoczek,
     litery(L), elemIndeks(L, X1, I), elemIndeks(L, X2, I2), odejmij(I2, I, W2),
     ((abs(W2) =:= 2, abs(W1) =:= 1) ; (abs(W2) =:= 1, abs(W1)=:= 2)).
 
-% Wariant: miejsce docelowe jest zajete. U¿yta jest funkcja czyBicie,
+% Wariant: miejsce docelowe jest zajete. UÅ¼yta jest funkcja czyBicie,
 % sprawdzajaca mozliwosc bicia.
 ruch(C, K, X1, Y1, X2, Y2) :- C == skoczek,
     not(czyWolne(X2, Y2, K)), czyBicie(X2, Y2, K), odejmij(Y2, Y1,W1),
@@ -276,20 +276,3 @@ odejmij(X, Y, Z) :- Z is X-Y.
 %Funkcja zwracajaca indeks elementu w liscie
 elemIndeks([E|_], E, 0).
 elemIndeks([_|O], E, Indeks) :- elemIndeks(O, E, Indeks2), Indeks is Indeks2 +1.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
